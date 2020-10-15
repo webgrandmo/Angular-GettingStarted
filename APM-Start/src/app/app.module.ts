@@ -11,6 +11,7 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 import { WelcomeComponent } from './home/welcome.component';
 import { PageNotFoundComponent } from './shared/error-pages/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
+import { ProductDetailGuard } from './products/product-detail/product-detail.guard';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'product', component: ProductListComponent },
-      {path: 'product/:id', component: ProductDetailComponent },
+      {path: 'products', component: ProductListComponent },
+      {path: 'products/:id', canActivate:[ProductDetailGuard], component: ProductDetailComponent },
       {path: 'welcome', component: WelcomeComponent },
       {path: '', redirectTo: 'welcome', pathMatch: 'full' },
       {path: '**', component: PageNotFoundComponent},
