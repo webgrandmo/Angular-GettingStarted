@@ -1,0 +1,15 @@
+.page-not-found {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.page-not-found h1 {
+    font-size: 8rem;
+    color: #3a3f41;
+    width: 100%;
+}
+
+.page-not-found p {
+    width: 100%;
+}
